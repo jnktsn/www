@@ -1,6 +1,6 @@
 <template>
-  <header :style="headerStyles">
-    <div class="header-content">
+  <header :style="headerStyles" class="d-flex justify-content-center align-content-center align-items-center">
+    <div class="">
       <div class="header-content-inner">
         <h1 class="heading">
           <slot name="heading">
@@ -18,6 +18,7 @@
             type="primary"
             icon="fa-calendar"
             href="#calendar"
+            size="lg"
           >
             See what's happening now
           </button-link>
@@ -53,6 +54,10 @@
 </script>
 
 <style lang="scss" scoped>
+  hr {
+    margin-bottom: 20px;
+  }
+
   header {
     position: relative;
     width: 100%;
@@ -62,29 +67,22 @@
     background-position: center;
     background-size: cover;
     min-height: 100%;
-  }
+    height: 100vh;
 
-  .header-content {
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0,0,0,0.5);
-    box-shadow: 0 0 200px 100px rgba(0,0,0,0.5);
-    padding: 0 50px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    p {
+      margin-bottom: 50px;
+      font-weight: 300;
+      color: rgba(255,255,255,.7);
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 80%;
+      font-size: 18px;
+    }
   }
 
   @media (max-width: 767px) {
     header {
       min-height: auto;
-    }
-
-    .header-content {
-      padding: 100px 15px;
-      position: relative;
-      top: auto;
-      transform: none;
     }
   }
 </style>
