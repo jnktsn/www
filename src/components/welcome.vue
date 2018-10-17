@@ -1,6 +1,6 @@
 <template>
   <header :style="headerStyles" class="d-flex justify-content-center align-content-center align-items-center">
-    <div class="">
+    <div class="header-content">
       <div class="header-content-inner">
         <h1 class="heading">
           <slot name="heading">
@@ -60,14 +60,15 @@
 
   header {
     position: relative;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
     text-align: center;
     color: #fff;
-    background-image: url(../assets/images/header.jpg);
-    background-position: center;
+    background-image: url('/static/images/capitol.jpg');
+    background-position: top;
     background-size: cover;
     min-height: 100%;
-    height: 100vh;
 
     p {
       margin-bottom: 50px;
@@ -77,6 +78,26 @@
       margin-left: auto;
       max-width: 80%;
       font-size: 18px;
+    }
+
+    .header-content {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.75);
+      
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+
+    .header-content-inner {
+      color: #407cbf;
+      box-shadow: none;
+      background: transparent;
+      p {
+        color: #000!important;
+      }
     }
   }
 
